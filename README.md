@@ -16,9 +16,13 @@ To interpret the variable cylinder (cyl),we can see that the lowest number of cy
 
 
                                                     Linear Regression 
+             lm_model <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)
+
 **Model Performance**
 
-When conducting the linear regression, the data shows that all variables except weight (wt) had p values higher than 0.05. By doing this, I was able to narrow down which variable is most significant to the problem we are trying to solve. Weight is the most relevant variable in finding out which car is most fuel efficient.The mean squared error (MSE) of the regression is 7.023544, the R squared value is 0.8690158, and the adjusted R squared is  0.8066423. R squared suggests that 81% of the variability in the response variable mpg is explained by the predictor variables which means that the predictor values explain a significant amount of variability in the response variable ‘mpg’. The adjusted R suggests that the model is not overfitting to the data. The AIC is 163.7098 and the BIC is 183.2986. The regression MSE os 2.283353. 
+When conducting the linear regression, the data shows that all variables except weight (wt) had p values higher than 0.05.This shows that weight is the most relevant variable in finding out which car is most fuel efficient.
+
+The mean squared error (MSE) of the linear regression before optimization is 7.023544, the R squared value is 0.8690158, and the adjusted R squared is  0.8066423. R squared suggests that 81% of the variability in the response variable mpg is explained by the predictor variables which means that the predictor values explain a significant amount of variability in the response variable ‘mpg’. The adjusted R suggests that the model is not overfitting to the data. The AIC is 163.7098 and the BIC is 183.2986. The regression MSE os 2.283353. 
 
 ![Screen Shot 2023-11-08 at 10 47 47 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/ffe2df4d-85c4-4598-a84a-e7db8540e883)
 
@@ -29,10 +33,9 @@ When conducting the linear regression, the data shows that all variables except 
  -The variable gear has no minimum values outside the range of the box plot. 
 
 ![Screen Shot 2023-11-08 at 10 49 18 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/40450221-50d4-4231-9dab-bb2432dca175)
-
+                                                    Optimal Linear Regression
 **Using variable selection**
-
-Using backwards selection, the  starting AIC was 65.52. After taking away all but disp, weight, qsec, and am, AIC was 55.45. This variable selection process shows that the optimal model is lmmodel_1 = mpg ` disp + wt + qsec + am . The p values for weight, qsec, and am are all under 0.05 which shows that they are significant to predicting the response variable. The Multiple R-squared is 0.8671 and adjusted R squared is 0.844 which are fairly high. There is a 86% chance that the  response variable is predicted by the predictor variables. We can see that the R squared values are similar in both models, so looking at the AIC is a better indicator that this is  the optimal model compared to the model using all variables. 
+Using backwards selection we are able find the optimal linear regression. The  starting AIC was 65.52. After taking away all but disp, weight, qsec, and am, AIC was 55.45. This variable selection process shows that the optimal model is lmmodel_1 = mpg ~ disp + wt + qsec + am . The p values for weight, qsec, and am are all under 0.05 which shows that they are significant to predicting the response variable. The Multiple R-squared is 0.8671 and adjusted R squared is 0.844 which are fairly high. There is a 86% chance that the  response variable is predicted by the predictor variables. We can see that the R squared values are similar in both models, so looking at the AIC is a better indicator that this is  the optimal model compared to the model using all variables. 
 
 **Residuals vs. Fitted**
 
