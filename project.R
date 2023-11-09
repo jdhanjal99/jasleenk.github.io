@@ -1,4 +1,4 @@
-######## From Project Codes File Google Drive ########
+############################## Linear Regression ##############################
 # Loading
 data(mtcars)
 summary(mtcars)
@@ -71,8 +71,6 @@ plot(subset_result, scale = "bic")
 
 
 
-
-
 nullmodel= lm(mpg ~ 1, data = mtcars_train)
 fullmodel = lm(mpg ~ ., data = mtcars_train)
 model.step = step(fullmodel, direction = "backward")
@@ -85,25 +83,6 @@ summary(lm_model)
 #Do lm model on weight qsec and am only
 lm_model1 <- lm(mpg ~ wt + qsec+am, data = mtcars)
 summary(lm_model1)
-
-
-#Ten fold cross validation
-# Define the linear regression model
-lm_model <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)
-
-library(boot)
-# Define the linear regression model
-lm_model <- lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)
-
-# Define the function to calculate the mean squared error
-mse <- function(y, yhat) mean((y - yhat)^2)
-
-# Perform 5-fold cross-validation
-library(boot)
-model_2 = glm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb, data = mtcars)
-cv.glm(data = mtcars, glmfit = model_2, K = 11)$delta[2]
-
-
 
 
 ################################## Random Forest ########################################
@@ -160,6 +139,7 @@ rf_model1 <- randomForest(mpg ~ ., data = mtcars, ntree = 1000, importance = TRU
 varImpPlot(rf_model1, main = "Feature Importance Plot")
 # Fit the random forest model
 rf_model <- randomForest(mpg ~ ., data = mtcars_train, ntree = 500)
+
 
 
 
