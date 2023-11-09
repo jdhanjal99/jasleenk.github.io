@@ -3,20 +3,21 @@
 Department of Marketing and Business Analytics
 
 
-                                                         **Introduction**
+                                                       Introduction
 This project is based on the data analysis of the mt cars dataset retrieved from R Studio. Information on 11 variables were taken from 32 automobiles where miles per gallon serves as the predictor variable. The goal of this project is to determine which variables significantly influence a car's fuel efficiency.
 
 In this analysis, we will compare two models to determine the most accurate one: the optimal linear regression model and the random forest model. These models will be evaluated based on their performance metrics, and we will identify which one provides the best fit for the data, allowing us to gain insights into the factors influencing a car's fuel efficiency.
 
 
-**Exploratory Analysis**
+                                                    Exploratory Analysis
 To interpret the variable cylinder (cyl),we can see that the lowest number of cylinders in an automobile from the data set is 4 and the highest number is 8. 25% of the data has 4 cylinders, on average there are 6 cylinders, and 75%of the data set has 8 cylinders.Similar interpretations would be the same for the rest of the 10 variables (miles per gallon (mpg), displacement (disp), horsepower (hp), rear axle ratio (drat), weight (wt), quarter mile time in seconds (qsec), engine type (vs), transmission type (am), number of forward gearss (gear), & number of carburetors (carb)).
 
 ![Screen Shot 2023-11-08 at 10 37 02 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/09dbad3e-9d20-4976-b44d-b7d19ea2076f)
 
 
-**Linear Regression** 
-                                                     Model Performance
+                                                    Linear Regression 
+**Model Performance**
+
 When conducting the linear regression, the data shows that all variables except weight (wt) had p values higher than 0.05. By doing this, I was able to narrow down which variable is most significant to the problem we are trying to solve. Weight is the most relevant variable in finding out which car is most fuel efficient.The mean squared error (MSE) of the regression is 7.023544, the R squared value is 0.8690158, and the adjusted R squared is  0.8066423. R squared suggests that 81% of the variability in the response variable mpg is explained by the predictor variables which means that the predictor values explain a significant amount of variability in the response variable ‘mpg’. The adjusted R suggests that the model is not overfitting to the data. The AIC is 163.7098 and the BIC is 183.2986. The regression MSE os 2.283353. 
 
 ![Screen Shot 2023-11-08 at 10 47 47 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/ffe2df4d-85c4-4598-a84a-e7db8540e883)
