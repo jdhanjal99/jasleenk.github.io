@@ -10,7 +10,9 @@ In this analysis, we will compare two models to determine the most accurate one:
 
 
                                                     Exploratory Analysis
-To interpret the variable cylinder (cyl),we can see that the lowest number of cylinders in an automobile from the data set is 4 and the highest number is 8. 25% of the data has 4 cylinders, on average there are 6 cylinders, and 75%of the data set has 8 cylinders.Similar interpretations would be the same for the rest of the 10 variables (miles per gallon (mpg), displacement (disp), horsepower (hp), rear axle ratio (drat), weight (wt), quarter mile time in seconds (qsec), engine type (vs), transmission type (am), number of forward gearss (gear), & number of carburetors (carb)).
+To interpret the variable cylinder (cyl),we can see that the lowest number of cylinders in an automobile from the data set is 4 and the highest number is 8. 25% of the data has 4 cylinders, on average there are 6 cylinders, and 75%of the data set has 8 cylinders.
+
+Similar interpretations would be the same for the rest of the 10 variables (miles per gallon (mpg), displacement (disp), horsepower (hp), rear axle ratio (drat), weight (wt), quarter mile time in seconds (qsec), engine type (vs), transmission type (am), number of forward gearss (gear), & number of carburetors (carb)).
 
 ![Screen Shot 2023-11-08 at 10 37 02 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/09dbad3e-9d20-4976-b44d-b7d19ea2076f)
 
@@ -34,8 +36,10 @@ The mean squared error (MSE) of the linear regression before optimization is 7.0
 
 ![Screen Shot 2023-11-08 at 10 49 18 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/40450221-50d4-4231-9dab-bb2432dca175)
                                                     Optimal Linear Regression
+                          model_step <- lm(formula = mpg ~ hp + wt + qsec + am, data = mtcars_train)
+
 **Using variable selection**
-Using backwards selection we are able find the optimal linear regression. The  starting AIC was 65.52. After taking away all but disp, weight, qsec, and am, AIC was 55.45. This variable selection process shows that the optimal model is lmmodel_1 = mpg ~ disp + wt + qsec + am . The p values for weight, qsec, and am are all under 0.05 which shows that they are significant to predicting the response variable. The Multiple R-squared is 0.8671 and adjusted R squared is 0.844 which are fairly high. There is a 86% chance that the  response variable is predicted by the predictor variables. We can see that the R squared values are similar in both models, so looking at the AIC is a better indicator that this is  the optimal model compared to the model using all variables. 
+By using backwards selection, we were able find the optimal linear regression by removing the least significant variables. The AIC at the first step of the variable selection was 65.52. After taking away all but disp, weight, qsec, and am, the AIC at the last step was 55.45. The AIC & BIC of the final model selected by the backwards selection process was 136.5422 & 144.5354 respectively.  This variable selection process shows that the optimal model includes the variables hp, wt, qsec, and am. The p values for weight, qsec, and am are all under 0.05 which shows that they are significant to predicting the response variable. The value of Multiple R Squared, 0.8671, suggests that the optimal linear regression model explains about 86.71% of the variability in the actual fuel efficiency of the cars in your dataset. The value of adjusted R squared, 0.844, suggests that about 84.4% of the variability in fuel efficiency is explained. We can see that the R squared values are similar in both models, so looking at the AIC is a better indicator that this is  the optimal model compared to the model using all variables. 
 
 **Residuals vs. Fitted**
 
@@ -46,7 +50,10 @@ The Residuals vs. Fitted plot demonstrates that all predicted values are randoml
                                                    Random forest model
 **Model Performance**
 
-For the random forest model, a 90% training set and 10% testing set was used. The out of sample mean squared error (MSE) on the testing data set is 2.353272 and the in sample MSE is 60.7849. R squared is 0.843187 and percent variance is 80.48. This means that the predictor variables in the  random forest model explain 80.48% of the variance in the response variable mpg. The mean squared residuals is 7.015532. 
+For the random forest model, a 90% training set and 10% testing set was used. 
+
+The out of sample mean squared error (MSE) on the testing data set is 2.353272, which suggests the average squared difference between what our model predicted and the actual fuel efficiency. This tells us that the model performs well on new, unseen data. The in sample MSE helps us see how well our model fits the data it was trained on, and has the value of 60.7849. R squared is 0.843187, meaning our model captures about 84.32% of the variability. Adjusted R Squared is 80.48. This means that the predictor variables in the  random forest model explain 80.48% of the variance in the response variable mpg. The mean squared residuals, which is the average of the squared differences between our predicted values and the actual values, is 7.015532. It gives us an overall sense of how well our model is doing in terms of prediction accuracy.
+
 
 **Feature Importance Plot**
 
@@ -55,10 +62,12 @@ The plot below shows that taking away the variables weight (wt), horsepower (hp)
 
 
                                                      Conclusions
-The optimal linear regression model had less error than the random forest. We can see this because the MSE in the optimal linear regression was less than the MSE on the random forest model, meaning there was less error. Additionally, the optimal linear regression model had a higher adjusted r square, which indicates it is a better fit for the original regression model. 
+We can see that the random forest model is quite effective, explaining a significant portion (80.48%) of the differences in fuel efficiency. The out-of-sample MSE indicates it performs well on new, unseen data, and the R-squared provides confidence in the model's ability to capture and understand the patterns in the data.
 
-According to the optimal linear regression, the variables that had the most effect on gas mileage on a vehicle are weight, quarter mile time, automatic/manual transmission,and horsepower. The random forest indicates the variables weight, displacement, cylinders, and horsepower have the most effect on gas mileage. 
+However, the optimal linear regression model outperformed the random forest model. The mean squared error in the optimal linear regression is notably lesser than that in the random forest, signifying a higher precision in predictions. Additionally, the optimal linear regression model had a higher adjusted r square, which indicates it is a better fit for the original regression model. 
 
-To conclude, we would use the optimal linear regression model when determining which variables have the most effect on gas mileage. Hence, weight, quarter mile time, automatic/manual transmission, and horsepower are the variables that affect a vehicle's gas mileage the most. 
+Analyzing the optimal linear regression model reveals that weight, quarter-mile time, transmission type (automatic/manual), and horsepower are the most significant variables that influence a vehicle's fuel efficiancy. On the other hand, the random forest model suggests that weight, displacement, cylinders, and horsepower play crucial roles in determining fuel efficiency.
+
+In conclusion, we would use the optimal linear regression model when determining which variables have the most effect on gas mileage. Consequently, weight, quarter mile time, automatic/manual transmission, and horsepower are the variables that affect a vehicle's gas mileage the most. 
 
 
