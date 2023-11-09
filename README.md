@@ -46,6 +46,7 @@ The Residuals vs. Fitted plot demonstrates that all predicted values are randoml
 For the random forest model, a 90% training set and 10% testing set was used. The out of sample mean squared error (MSE) on the testing data set is 2.353272 and the in sample MSE is 60.7849. R squared is 0.843187 and percent variance is 80.48. This means that the predictor variables in the  random forest model explain 80.48% of the variance in the response variable mpg. The mean squared residuals is 7.015532. 
 
 **Feature Importance Plot**
+
 The plot below shows that taking away the variables weight (wt), horsepower (hp), cylinders (cyl), and displacement (disp) will result in the model to have the largest decrease in accuracy. This means that weight is the most important variable that predicts fuel efficiency since it is at the top.  
 ![Screen Shot 2023-11-08 at 10 50 19 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/2ff906b4-9d13-4473-afd4-89f6de166e4e)
 
