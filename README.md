@@ -40,7 +40,8 @@ The initial linear regression produces a mean squared error (MSE) of 7.023544, r
                           model_step <- lm(formula = mpg ~ hp + wt + qsec + am, data = mtcars_train)
                           
 
-**Using variable selection**
+**Variable selection**
+
 By using backwards selection, we are able find the optimal linear regression by removing the least significant variables. The AIC at the first step of variable selection is 65.52. After taking away all but disp, weight, qsec, and am, the AIC at the last step is 55.45. The AIC & BIC of the final model selected by the backwards selection process is 136.5422 & 144.5354 respectively.  This variable selection process shows that the optimal model includes the variables hp, wt, qsec, and am. The p values for weight, qsec, and am are all under 0.05 which shows that they are significant to predicting the response variable. The value of Multiple R Squared, 0.8671, suggests that the optimal linear regression model explains about 86.71% of the variability in the actual fuel efficiency of the cars in your dataset. The value of adjusted R squared, 0.844, suggests that about 84.4% of the variability in fuel efficiency is explained. Since the R squared values are similar in both models, the AIC provides a more reliable indicator that this is the optimal model in contrast to the one using all variables.
 
 
