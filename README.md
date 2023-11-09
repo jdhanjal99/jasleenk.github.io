@@ -18,12 +18,14 @@ To interpret the variable cylinder (cyl),we can see that the lowest number of cy
 **Linear Regression** 
                                                      Model Performance
 When conducting the linear regression, the data shows that all variables except weight (wt) had p values higher than 0.05. By doing this, I was able to narrow down which variable is most significant to the problem we are trying to solve. Weight is the most relevant variable in finding out which car is most fuel efficient.The mean squared error (MSE) of the regression is 7.023544, the R squared value is 0.8690158, and the adjusted R squared is  0.8066423. R squared suggests that 81% of the variability in the response variable mpg is explained by the predictor variables which means that the predictor values explain a significant amount of variability in the response variable ‘mpg’. The adjusted R suggests that the model is not overfitting to the data. The AIC is 163.7098 and the BIC is 183.2986. The regression MSE os 2.283353. 
+
 ![Screen Shot 2023-11-08 at 10 47 47 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/ffe2df4d-85c4-4598-a84a-e7db8540e883)
 
                                                           Box plot
  Some notable takeaways from constructing a box plot are 
  -The ariables VS and AM have values that are tightly clustered  (no outliers)
  -The variable gear has no minimum values outside the range of the box plot. 
+
 ![Screen Shot 2023-11-08 at 10 49 18 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/40450221-50d4-4231-9dab-bb2432dca175)
 
                                                    Using variable selection
@@ -31,6 +33,7 @@ Using backwards selection, the  starting AIC was 65.52. After taking away all bu
 
                                                      Residuals vs. Fitted
 The Residuals vs. Fitted plot demonstrates that all predicted values are randomly scattered around zero, indicating that the model is appropriate for the data with no discernible pattern.
+
 ![Screen Shot 2023-11-08 at 10 49 38 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/b2165c51-beed-4f21-a4a6-365277107743)
 
 **Random forest model**
