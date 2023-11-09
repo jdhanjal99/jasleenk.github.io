@@ -3,7 +3,7 @@
 Department of Marketing and Business Analytics
 
 
-**Introduction**
+                                                         **Introduction**
 This project is based on the data analysis of the mt cars dataset retrieved from R Studio. Information on 11 variables were taken from 32 automobiles where miles per gallon serves as the predictor variable. The goal of this project is to determine which variables significantly influence a car's fuel efficiency.
 
 In this analysis, we will compare two models to determine the most accurate one: the optimal linear regression model and the random forest model. These models will be evaluated based on their performance metrics, and we will identify which one provides the best fit for the data, allowing us to gain insights into the factors influencing a car's fuel efficiency.
