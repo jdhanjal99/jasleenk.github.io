@@ -54,6 +54,7 @@ The Residuals vs. Fitted plot demonstrates that all predicted values are randoml
 ![Screen Shot 2023-11-08 at 10 49 38 PM](https://github.com/jdhanjal99/jdhanjal99.github.io/assets/145622744/b2165c51-beed-4f21-a4a6-365277107743)
 
                                                    Random Forest Model
+                                                   
                  rf_model1 <- randomForest(mpg ~ ., data = mtcars, ntree = 1000, importance = TRUE)
                  
 **Model Performance**
